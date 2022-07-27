@@ -65,15 +65,6 @@ imgFile.addEventListener('change', (event) => {
     reader.readAsDataURL(event.target.files[0]);
 });
 
-// var Canvas = new fabric.Canvas('canvas-f');
-// var rect = new fabric.Rect({
-//     top: 100, left: 100, width: 60, height: 70, fill: 'red'
-// });
-// Canvas.add(rect);
-
-// http://jsfiddle.net/jaibuu/Vp6wa/
-// https://jsfiddle.net/hazeebp/195uan6f/1/
-
 function throttle (callback, limit) {
     var waiting = false;
     return function () {
