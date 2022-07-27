@@ -16,7 +16,7 @@ function moveImage(event) {
 
         // Change the image position to difference between the x and y 
         // transform on the canvas and animate that
-        image.animate({left: initLeft-changeX, top: 0-changeY}, {
+        image.animate({left: initLeft-changeX, top: initTop-changeY}, {
             onChange: canvas.renderAll.bind(canvas),
             duration: 200
         });
@@ -28,7 +28,7 @@ function moveImage(event) {
 }
 
 var image = new Image();
-var initLeft = 0;
+var initLeft = 0, initTop = 0;
 imgFile = document.getElementById('imgfile')
 imgFile.addEventListener('change', (event) => {
     var reader = new FileReader();
@@ -54,6 +54,7 @@ imgFile.addEventListener('change', (event) => {
             // Center image object and store left
             canvas.centerObject(image);
             initLeft = image.left
+            initTop = image.top
             // Add the image to canvas
             canvas.setActiveObject(image);
             canvas.add(image);
@@ -69,6 +70,9 @@ imgFile.addEventListener('change', (event) => {
 //     top: 100, left: 100, width: 60, height: 70, fill: 'red'
 // });
 // Canvas.add(rect);
+
+// http://jsfiddle.net/jaibuu/Vp6wa/
+// https://jsfiddle.net/hazeebp/195uan6f/1/
 
 function throttle (callback, limit) {
     var waiting = false;
